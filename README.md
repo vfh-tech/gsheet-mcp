@@ -17,6 +17,22 @@ An MCP (Model Context Protocol) server that allows AI agents to read and interac
     - Service Account created with a JSON key file.
 - **Access**: The Service Account email must have "Viewer" or "Editor" access to the target Google Sheet.
 
+## Getting service-account-key.json
+
+1.  **Create Project**: Go to [Google Cloud Console](https://console.cloud.google.com/) and create a new project.
+2.  **Enable API**: Search for "Google Sheets API" and click **Enable**.
+3.  **Create Service Account**:
+    - Go to **IAM & Admin** > **Service Accounts**.
+    - Click **Create Service Account**.
+    - Name it (e.g., `sheet-mcp-bot`) and click **Create and Continue**.
+    - (Optional) Grant "Editor" role if needed, then click **Done**.
+4.  **Generate Key**:
+    - Click on the newly created Service Account email.
+    - Go to the **Keys** tab > **Add Key** > **Create new key**.
+    - Select **JSON** and click **Create**.
+    - The file will download automatically. Rename it to `service-account-key.json`.
+5.  **Share Sheet**: Open your target Google Sheet, click **Share**, and paste the Service Account email (found in the JSON file under `client_email`).
+
 ## Installation
 
 1.  **Clone/Open** this repository.
