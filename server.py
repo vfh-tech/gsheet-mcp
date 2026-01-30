@@ -456,5 +456,10 @@ def delete_column(sheet_name: str, start_index: int, end_index: int) -> str:
         return f"Error deleting columns: {e}"
 
 
-if __name__ == "__main__":
+def run():
+    """Entry point for the MCP server."""
     mcp.run()
+
+
+if __name__ == "__main__":
+    run()
