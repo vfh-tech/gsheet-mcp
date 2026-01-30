@@ -56,7 +56,34 @@ An MCP (Model Context Protocol) server that allows AI agents to read, write, and
 
 ## Usage with MCP Clients
 
+### Option 1: Using `uvx` (Recommended)
+
+This method allows you to run the server directly from GitHub without cloning the repository manually.
+
 Add this configuration to your MCP settings file (e.g., `claude_desktop_config.json` or `mcp_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "google-sheet": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/vfh-tech/gsheet-mcp",
+        "sheet-mcp"
+      ],
+      "env": {
+        "SPREADSHEET_ID": "your_spreadsheet_id_here",
+        "SERVICE_ACCOUNT_FILE": "C:\\path\\to\\your\\service-account-key.json"
+      }
+    }
+  }
+}
+```
+
+### Option 2: Local Installation
+
+If you prefer to clone the repository and run it locally:
 
 ```json
 {
@@ -67,7 +94,7 @@ Add this configuration to your MCP settings file (e.g., `claude_desktop_config.j
         "--directory",
         "/absolute/path/to/sheet-mcp",
         "run",
-        "server.py"
+        "sheet-mcp"
       ],
       "env": {
         "SPREADSHEET_ID": "your_spreadsheet_id_here",
