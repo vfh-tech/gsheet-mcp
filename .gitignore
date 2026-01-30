@@ -12,3 +12,5 @@ wheels/
 service-account-key.json
 .env
 
+service-account-key-NHI.json
+.serena/
